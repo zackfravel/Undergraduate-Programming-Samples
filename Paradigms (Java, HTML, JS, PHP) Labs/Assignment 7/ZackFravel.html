@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zack Fravel's Assignment 7</title>
+</head>
+<body>
+
+<h1>Zack Fravel's Assignment 7</h1>
+
+<form name="createCarForm" onsubmit ="return createCar();">
+	Car Description: <input type="text" name="name"> (i.e. "Prius")
+	<br><br>
+	Engine description: <input type="text" name="engine"> (i.e. V6)
+	<br><br>
+	Fuel Efficiency: <input type="text" name="mpg"> (mi/gal)
+	<br><br>
+	Max Speed: <input type="text" name="speed"> (mph)
+	<br><br>
+	Fuel Capacity: <input type="text" name="capacity"> (gal)
+	<br><br>
+	<input type="submit" value="Create the car"><br>
+</form>
+
+<br><br>
+
+<p id="creator"></p>
+
+<br><br>
+
+<div id = "HiddenForm">
+<form name="driveForm" onsubmit="return driveCar();">
+	Miles to drive: <input type="text" name="miles"> (miles)
+	<br><br>
+	x Ratio: <input type="text" name="xRat">
+	<br><br>
+	y Ratio: <input type="text" name="yRat">
+	<br><br>
+	<input type="submit" value="Drive!"><br>
+</form>
+</div>
+
+<br><br>
+
+<p id="driveStatus"></p>
+<p id="tooFar"></p>
+
+<br><br>
+
+<script>
+document.getElementById("HiddenForm").style.visibility = "hidden";
+</script>
+
+<script>
+
+var TestEngine;
+var TestCar;
+
+function Hider()
+{
+	document.getElementById("HiddenForm"). style.visibility = "visible";
+}
+
+
+function driveCar()
+{
+	TestCar.drive(document.forms["driveForm"]["miles"].value, document.forms["driveForm"]["xRat"].value, document.forms["driveForm"]["yRat"].value);
+	document.getElementById("driveStatus").innerHTML = TestCar.getDescription();
+
+	return false;
+}
+
+function createCar()
+{
+	// Instantiate Engine
+
+	TestEngine = new Engine(document.forms["createCarForm"]["engine"].value, document.forms["createCarForm"]["mpg"].value, document.forms["createCarForm"]["speed"].value); 
+
+	// Instantiate Car
+
+	TestCar = new Car(document.forms["createCarForm"]["name"].value, document.forms["createCarForm"]["capacity"].value, TestEngine);
+
+	// Fill Tank and Display information to page
+	TestCar.fillUp();
+	document.getElementById("creator").innerHTML = TestCar.getDescription();
+
+	Hider();
+
+	return false;
+}
+
+
+// GasTank, Engine, and Car Classes 
+
+
+function GasTank(capacityIn)
+{
+	
+	// Private members
+
+	var level = 0;
+
+	if(capacityIn < 0)
+	{
+		var fuelCapacity = 0;
+	}else{
+		var fuelCapacity = capacityIn;
+	}
+
+
+	// Privileged  methods
+	
+	this.getCapacity = function()
+	{
+		return fuelCapacity;
+	}
+
+	this.getLevel = function()
+	{
+		return level;
+	}
+
+	this.setLevel = function(levelIn)
+	{
+		if(levelIn < 0){
+			level = 0;
+		}else if(levelIn > fuelCapacity){
+			level = fuelCapacity;
+		}else{
+			level = levelIn;
+		}
+	}
+}
+
+function Engine(ID, milage, top)
+{
+	// Private members
+
+	if(ID == null || ID == "")
+	{
+		var description = "Generic Engine";
+	}else{
+		var description = ID; 
+	}
+
+	if(milage == null || milage < 0){
+		var mpg = 0;
+	}else{
+		var mpg = milage;
+	}
+
+	if(top == null || top < 0){
+		var topSpeed = 0;
+	}else{
+		var topSpeed = top;
+	}
+
+	// Privileged Methods
+
+	this.getDescription = function()
+	{
+		var EngineScrip = description + " (MPG: " + this.getMPG() + ", Max Speed: " + this.getMaxSpeed() + ")";
+		return EngineScrip;
+	}
+
+	this.getMPG = function()
+	{
+		return mpg;
+	}
+
+	this.getMaxSpeed = function()
+	{
+		return topSpeed;
+	}
+
+	
+}
+
+function Car(ID, Cap, Eng)
+{
+	// Private Members
+
+	var X = 0;
+	var Y = 0;
+
+	if(ID == null || ID == "")			// Description
+	{
+		var description = "Generic Car";
+	}else{
+		var description = ID; 
+	}
+							
+	var g = new GasTank(Cap);			// Gas Tank
+							
+	if(Eng == null)					// Engine
+	{
+		var e = new Engine("", 0, 0);
+	}else{
+		var e = Eng;
+	}
+
+
+	// Privileged Methods
+
+	this.getDescription = function()	// Get Description
+	{
+		var CarScrip = description + " (Engine: "  + e.getDescription() + "), Fuel: " + parseFloat(g.getLevel()).toFixed(2) + " / " + parseFloat(g.getCapacity()).toFixed(2) + ", Location: ("   + this.getX().toFixed(2) + ", " + this.getY().toFixed(2) + ")";
+		console.log(CarScrip);
+		return CarScrip;
+	}
+
+	this.getX = function()			// Get X
+	{
+		return X; 
+	}
+
+	this.getY = function()			// Get Y
+	{
+		return Y; 
+	}
+
+	this.getFuelLevel = function()		// Get Level
+	{
+		return g.getLevel();
+	}
+
+	this.getMPG = function()		// get MPG
+	{
+		return e.getMPG();
+	}
+
+	this.getMaxSpeed = function()		// get Max Speed
+	{
+		return e.getMaxSpeed();
+	}
+
+	this.fillUp = function()		// Fill up
+	{
+		g.setLevel(g.getCapacity());
+	}
+
+	this.drive = function(distance, xRatio, yRatio)		// Drive
+	{
+		var DesiredDistance = distance;
+		var prevLevel = g.getLevel();
+		var newLevel = g.getLevel() - (DesiredDistance/e.getMPG());
+		var miles = 0;
+
+		var hypRatio = Math.sqrt(Math.pow(xRatio, 2) + Math.pow(yRatio, 2));
+		var movements = distance/hypRatio;
+
+		if(newLevel < 0)
+		{
+			miles = prevLevel * e.getMPG();
+			var ErrorMSG = "Ran out of gas after driving " + miles.toFixed(2) + " miles.";
+			document.getElementById("tooFar").innerHTML = ErrorMSG;
+			alert(ErrorMSG);
+			g.setLevel(0);
+			movements = miles/hypRatio;
+			X += movements*xRatio;
+			Y += movements*yRatio;
+			return miles;
+		}else{
+			g.setLevel(newLevel);
+			X += movements*xRatio;
+			Y += movements*yRatio;
+			return distance;
+		}
+	}
+}
+
+</script>
+</body>
+</html>
+

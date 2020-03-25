@@ -1,0 +1,94 @@
+How would you like to input your course data?
+[A] Read in from the default file (courses.txt)
+[B] Read in from another specified file
+[C] Manual input
+
+
+Welcome to the GPA and Course storage program menu.
+Now that you've entered your class information, please enter the character next to the choice you wish to pick.
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+F. Remove a course from the current list
+Q. Quit the program
+Class name: 
+
+Term of enrollment: 
+
+Course number: 
+
+Grade: 
+
+Hours (1-5): 
+
+
+
+You have taken 2 classes.
+
+
+Classes: Programming Foundations I  Digital Design  
+
+Terms: Fall 2015  Fall 2015  
+
+Course Numbers: 2004  2114  
+
+Grades: A B 
+
+Hours: 4 4 
+
+Welcome to the GPA and Course storage program menu.
+Now that you've entered your class information, please enter the character next to the choice you wish to pick.
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+F. Remove a course from the current list
+Q. Quit the program
+
+
+Your GPA is: 3.5
+
+
+Welcome to the GPA and Course storage program menu.
+Now that you've entered your class information, please enter the character next to the choice you wish to pick.
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+F. Remove a course from the current list
+Q. Quit the program
+
+
+You have taken 2 classes.
+
+
+Classes: Programming Foundations I  Digital Design  
+
+Terms: Fall 2015  Fall 2015  
+
+Course Numbers: 2004  2114  
+
+Grades: A B 
+
+Hours: 4 4 
+
+Welcome to the GPA and Course storage program menu.
+Now that you've entered your class information, please enter the character next to the choice you wish to pick.
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+F. Remove a course from the current list
+Q. Quit the program
+Successfully outputted to file!
+
+

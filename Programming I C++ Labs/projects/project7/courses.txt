@@ -1,0 +1,71 @@
+14
+Intro Eng I
+Fall 2014
+GNEG 1111H
+B
+1
+Calculus III
+Fall 2014
+MATH 2574C
+C
+4
+Music
+Fall 2014
+MLIT 1003
+C
+3
+Physics I
+Fall 2014
+PHYS 2054
+B
+4
+American National Gov
+Fall 2014
+PLSC 2003
+B
+3
+Chem I
+Spring 2015
+CHEM 1103
+C
+3
+Intro Eng II
+Spring 2015
+GENG 1121
+B
+1
+Diff Eq
+Spring 2015
+MATH 2584
+C
+4
+Physics II
+Spring 2015
+PHYS 2074
+B
+4
+Psych
+Spring 2015
+PSYC 2003
+A
+3
+Anthropology
+Fall 2015
+ANTH 1023
+B
+3
+Digital Design
+Fall 2015
+CSCE 2114
+B
+4
+Sociology
+Fall 2015
+SOCI 2013
+A
+3
+Programming Foundations I
+Fall 2015
+CSCE 2004
+B
+4

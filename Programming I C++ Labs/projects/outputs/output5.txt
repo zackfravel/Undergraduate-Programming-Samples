@@ -1,0 +1,107 @@
+Enter how many classes you're taking/have taken: 
+Class name: 
+
+Term of enrollment (e.g. "Fall 2015"): 
+
+Course number: 
+
+Hours (1-5): 
+
+Grade: 
+
+Class name: 
+
+Term of enrollment (e.g. "Fall 2015"): 
+
+Course number: 
+
+Hours (1-5): 
+
+Grade: 
+
+Class name: 
+
+Term of enrollment (e.g. "Fall 2015"): 
+
+Course number: 
+
+Hours (1-5): 
+
+Grade: 
+
+Class name: 
+
+Term of enrollment (e.g. "Fall 2015"): 
+
+Course number: 
+
+Hours (1-5): 
+
+Grade: 
+
+Welcome to the GPA and Course storage program menu.
+Now that you've entered your class information, please enter the character next to the choice you wish to pick.
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+Q. Quit the program
+
+
+Your GPA is: 2.92857
+
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+Q. Quit the program
+
+
+You have taken 4 classes.
+
+
+Classes: Programming Foundations I  Anthropology  Psychology  Differential Equations  
+
+Terms: Fall 2015  Fall 2015  Spring 2015  Spring 2015  
+
+Course Numbers: 2004  2003  2003  2584  
+
+Grades: A B A D 
+
+Hours: 4 3 3 4 
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+Q. Quit the program
+
+
+Total hours (grade D): 4
+
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+Q. Quit the program
+What term would you like your GPA calculated from?
+
+
+Your GPA for Spring 2015 is: 2.28571
+
+
+A. Compute the GPA for all courses
+B. List all courses
+C. Compute the total credit hours of courses with grade D
+D. Compute the GPA for a particular semester
+E. Add another course to the course list
+Q. Quit the program
+
+
